@@ -1,6 +1,6 @@
-#Multi-Threaded Web Server
+# Multi-Threaded Web Server
 
-##I. How to compile and run
+## I. How to compile and run
 	1. Program set up:
 		a. Open Terminal, input the <path> to the Multi-Threaded-Web-Server directory.
 			%cd <path>
@@ -26,7 +26,7 @@
 					%http://<local host>:<port number> <path to the file you want to download>
 				Then the file you are requested will download automatically.
 
-##II. How this program works
+## II. How this program works
 		This multi-threaded web server is constructed by POSIX threads in C language to realize the synchronization.
 		This web server is able to handle any file type including HTML, GIF, JPEG, TXT, etc. and of any arbitrary size.
 		It is composed of two different types of threads: worker threads and dispatcher threads.
@@ -34,7 +34,7 @@
 		Worker threads will monitor the request queue, retrieve requests and serve the request’s result back to the client.
 		To improve runtime performance, we implement LFU cache replacement policy.
 
-##III. Explanation of caching mechanism used.
+## III. Explanation of caching mechanism used.
 		We implemented LFU cache replacement policy. In our cache_entry_t structure, we added a member "hit_times" to represent the frequency of each cache_entry.
 		When the cache array is full, we iterate the cache array to find the index of the cache_entry with least frequency, free that cache_entry and that fill that spot with a new cache_entry.
 		If all the old entries are with same frequency then remove the cache_entry with the largest index of cache array.
